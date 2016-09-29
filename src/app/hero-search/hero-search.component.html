@@ -1,0 +1,11 @@
+<md-input class="search-box" align="center" #searchBox placeholder="Who are you looking for ?"
+          (keyup)="search(searchBox.value)">
+  <span md-prefix><i aria-label="hero" class="material-icons">search</i></span>
+</md-input>
+
+<div id="search-hero" align="center">
+  <div *ngFor="let hero of heroes | async"
+       (click)="gotoDetail(hero)" class="search-result">
+    {{hero.name}}
+  </div>
+</div>

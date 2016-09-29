@@ -1,0 +1,31 @@
+<md-card>
+  <md-card-content *ngFor="let hero of heroes" align="center">
+
+    <md-card-title align="center">
+      <h2>
+        <b>{{hero.name}}</b>
+        <i *ngIf="hero.aliasHero">alias {{hero.aliasHero}}</i>
+      </h2>
+    </md-card-title>
+    <img md-card-avatar md-card-sm-image *ngIf="hero.imgHero" [src]="'/assets/img/'+ hero.imgHero"
+         (click)="gotoDetail(hero)">
+
+    <md-card-title align="center">
+      <button md-fab md-mini-fab class="md-primary"
+              (click)="gotoDetail(hero)">
+        <i aria-label="hero" class="material-icons" role="img">star</i>
+      </button>
+    </md-card-title>
+
+    <md-card-content align="center">
+      <md-card-subtitle>
+        <b>Abilities</b> : {{hero.superpowers}}
+      </md-card-subtitle>
+      <md-card-subtitle>
+        <b>Weaponry</b> : {{hero.weapons}}
+      </md-card-subtitle>
+    </md-card-content>
+
+  </md-card-content>
+</md-card>
+

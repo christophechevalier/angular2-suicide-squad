@@ -1,0 +1,16 @@
+#search-hero {
+  cursor: pointer;
+}
+#search-hero .search-result {
+  text-align: center;
+  padding: 5px;
+  background: rgba(235, 235, 235, .8);
+}
+.search-box {
+  width: 100%;
+  padding: 10px;
+  background: #f5f5f5;
+}
+.search-box:hover, .search-box:active {
+  margin: 0;
+}

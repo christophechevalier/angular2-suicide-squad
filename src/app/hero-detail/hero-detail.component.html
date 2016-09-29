@@ -1,0 +1,65 @@
+<md-card *ngIf="hero">
+  <md-card-content>
+
+    <md-card-title align="center">
+      <img md-card-avatar md-card-sm-image *ngIf="hero.imgHero" [src]="'/assets/img/'+ hero.imgHero">
+      <b>{{hero.name}}</b>
+      - Edit Hero
+    </md-card-title>
+
+    <md-card-content align="center">
+      <table class="table-ajust-full" cellspacing="0">
+        <tr>
+          <td>
+            <md-input class="input-ajust-full" [(ngModel)]="hero.id" placeholder="Id :" disabled>
+              <span md-prefix><i aria-label="id" class="material-icons">folder_shared</i></span>
+            </md-input>
+          </td>
+        </tr>
+      </table>
+
+      <table class="table-ajust-full" cellspacing="0">
+        <tr>
+          <td>
+            <md-input class="input-ajust-full" [(ngModel)]="hero.name" placeholder="Name :">
+              <span md-prefix><i aria-label="name" class="material-icons">person</i></span>
+            </md-input>
+          </td>
+
+          <td>
+            <md-input class="input-ajust-full" [(ngModel)]="hero.aliasHero"
+                      placeholder="Alias :">
+              <span md-prefix><i aria-label="alias" class="material-icons">tag_faces</i></span>
+            </md-input>
+          </td>
+        </tr>
+      </table>
+
+      <table class="table-ajust-full" cellspacing="0">
+        <tr>
+          <td>
+            <md-input class="input-ajust-full" [(ngModel)]="hero.weapons" placeholder="Weaponry :">
+              <span md-prefix><i aria-label="weapons" class="material-icons">thumb_up</i></span>
+            </md-input>
+          </td>
+          <td>
+            <md-input class="input-ajust-full" [(ngModel)]="hero.superpowers" placeholder="Abilities :">
+              <span md-prefix><i aria-label="superpowers" class="material-icons">star_half</i></span>
+            </md-input>
+          </td>
+        </tr>
+      </table>
+    </md-card-content>
+
+    <md-card-actions align="end">
+      <button md-raised-button color="accent" (click)="goBack()">
+        Back
+      </button>
+
+      <button md-raised-button color="primary" (click)="save()">
+        Save
+      </button>
+    </md-card-actions>
+
+  </md-card-content>
+</md-card>

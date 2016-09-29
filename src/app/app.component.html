@@ -1,0 +1,25 @@
+<md-toolbar>
+  <h4>{{title}}</h4>
+
+  <md-toolbar-row>
+    <a routerLink="/dashboard">
+      <button md-raised-button>
+        Dashboard
+      </button>
+    </a>
+
+    <a routerLink="/heroes">
+      <button md-raised-button color="primary">
+        Heroes
+      </button>
+    </a>
+  </md-toolbar-row>
+
+</md-toolbar>
+
+<md-card align="center" id="card-search">
+  <hero-search></hero-search>
+  <!--<div id="wallpaper_squad"></div>-->
+</md-card>
+
+<router-outlet></router-outlet>

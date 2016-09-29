@@ -1,0 +1,49 @@
+<md-card>
+  <md-card-content>
+
+    <md-card-actions align="center">
+      <md-card-title align="center">
+        <b>Heroes</b>
+        - Add New Hero
+      </md-card-title>
+
+      <md-input #heroName placeholder="New Hero :">
+        <span md-prefix><i aria-label="name" class="material-icons">person</i></span>
+      </md-input>
+
+      <button md-raised-button color="primary" (click)="add(heroName.value); heroName.value=''">
+        Add
+      </button>
+    </md-card-actions>
+
+    <md-card-subtitle *ngIf="selectedHero" align="center">
+      <b>{{selectedHero.name | uppercase}}</b> is selected
+      <p md-line>
+        <span>This hero is fantastic !!</span>
+        <button md-raised-button color="primary" (click)="gotoDetail()">
+          Edit
+        </button>
+    </md-card-subtitle>
+
+    <md-divider></md-divider>
+
+    <md-list align="center">
+      <md-list-item id="list-heroes-inline" *ngFor="let hero of heroes" (click)="onSelect(hero)"
+                    [class.selected]="hero === selectedHero">
+        <h3 md-subheader>
+          <span><b>{{hero.id}}</b></span>
+        </h3>
+        <p md-subheader>
+          <span>{{hero.name}}</span>
+        </p>
+
+        <button *ngIf="hero === selectedHero" md-fab md-mini-fab class="md-warn"
+                (click)="delete(hero); $event.stopPropagation()">
+          <i aria-label="delete" class="material-icons" role="img">delete</i>
+        </button>
+
+      </md-list-item>
+    </md-list>
+
+  </md-card-content>
+</md-card>

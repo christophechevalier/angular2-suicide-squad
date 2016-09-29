@@ -1,0 +1,13 @@
+# Ignore Web Storm #
+###################
+.idea
+
+# Ignore Node, Bower & Sass
+###################
+typings
+src/app/**/*.js
+src/app/**/*.map
+node_modules
+jspm_packages
+bower_components
+.tmp
