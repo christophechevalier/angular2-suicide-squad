@@ -4,16 +4,27 @@
 git clone https://github.com/christophechevalier/angular2-suicide-squad.git
 cd angular2-suicide-squad
 npm install
-npm start
+ng serve
 ```
-
-# Suicide Squad
-
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.15.
-
 ## Dependencies
 
 This app use Angular 2 (Release 2.0.0) & Angular Material 2 (Work in Progress).
+
+## Suicide Squad
+
+This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.15.
+
+## Screenshot View Dashboard :
+
+![Dashboard Heroes](doc/DashboardHeroes_SuicideSquad.png?raw=true)
+
+## Screenshot View List Heroes :
+
+![List Heroes](doc/Heroes_SuicideSquad1.png?raw=true)
+
+## Screenshot View Edit Details Hero Selected :
+
+![Edit Heroe](doc/EditHero_SuicideSquad.png?raw=true)
 
 ## Development server
 
