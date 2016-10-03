@@ -1,25 +1,35 @@
-<md-toolbar>
-  <h4>{{title}}</h4>
+<div [class.dark-theme]="isDarkTheme">
 
+  <md-toolbar color="primary">
+  <span>
+    <md-icon>pets</md-icon>
+    {{title}}
+  </span>
+
+    <button md-icon-button [md-menu-trigger-for]="menu">
+      <md-icon>more_vert</md-icon>
+    </button>
+
+  </md-toolbar>
   <md-toolbar-row>
-    <a routerLink="/dashboard">
-      <button md-raised-button>
-        Dashboard
-      </button>
-    </a>
-
-    <a routerLink="/heroes">
-      <button md-raised-button color="primary">
-        Heroes
-      </button>
-    </a>
+    <md-tab-group #tabGroup (selectChange)="openTab(tabGroup.selectedIndex)">
+      <md-tab *ngFor="let tab of tabs">
+        <template md-tab-label>{{tab.title}}</template>
+      </md-tab>
+    </md-tab-group>
   </md-toolbar-row>
 
-</md-toolbar>
+  <br>
 
-<md-card align="center" id="card-search">
-  <hero-search></hero-search>
-  <!--<div id="wallpaper_squad"></div>-->
-</md-card>
+  <md-menu x-position="before" #menu="mdMenu">
+    <button md-menu-item (click)="openDialog()">Settings</button>
+    <button md-menu-item (click)="isDarkTheme=!isDarkTheme">Toggle Theme</button>
+    <button md-menu-item>Help</button>
+  </md-menu>
 
-<router-outlet></router-outlet>
+  <md-card align="center" id="card-search">
+    <hero-search></hero-search>
+  </md-card>
+
+  <router-outlet></router-outlet>
+</div>

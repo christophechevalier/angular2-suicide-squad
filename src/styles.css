@@ -1,5 +1,4 @@
-/*@import '~https://fonts.googleapis.com/icon?family=Material+Icons';
-@import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';*/
+@import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
 
 body {
   margin: 0;
@@ -9,9 +8,12 @@ a {
   cursor: pointer;
   cursor: hand;
 }
-a:link {
-  color: #607D8B;
+md-toolbar-row {
+  justify-content: space-between;
 }
+/*a:link {
+  color: #607D8B;
+}*/
 .input-ajust-full {
   width: 90%;
 }
